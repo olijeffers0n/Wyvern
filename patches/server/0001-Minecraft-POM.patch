@@ -331,7 +331,7 @@ index 0000000000000000000000000000000000000000..637c97757aa10600da22b964c8f013b3
 +        <dependency>
 +            <groupId>com.wyvern</groupId>
 +            <artifactId>minecraft-api</artifactId>
-+            <version>1.16.5</version>
++            <version>1.18.1</version>
 +        </dependency>
 +    </dependencies>
 +</project>
