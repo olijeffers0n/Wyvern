@@ -1,0 +1,3 @@
+### Credit to
+* <a href="https://github.com/Tuinity/Tuinity">Tuinity</a> for inspiration on how we handle our scripts (<a href="https://github.com/WyvernProject/Wyvern/blob/master/wyvern#L1-L33">`wyvern`</a>, <a href="https://github.com/WyvernProject/Wyvern/blob/master/scripts/apply#L30-L33">`apply`</a>, <a href="https://github.com/WyvernProject/Wyvern/blob/master/scripts/init#L37-L40">`init`</a>,<a href="https://github.com/WyvernProject/Wyvern/blob/master/scripts/rebuildpatches#L13-L19">`rebuildpatches`</a>,<a href="https://github.com/WyvernProject/Wyvern/blob/master/scripts/update#L31-L63">`update`</a>)
+* A random answer on stackoverflow (<a href="https://github.com/WyvernProject/Wyvern/blob/master/scripts/init#L15-L27">`update`</a>), sadly we can't find who made it.
