@@ -1,0 +1,337 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: DerplessNoob <tienthanh23423@gmail.com>
+Date: Fri, 17 Dec 2021 15:36:21 +0700
+Subject: [PATCH] Minecraft POM
+
+
+diff --git a/pom.xml b/pom.xml
+new file mode 100644
+index 0000000000000000000000000000000000000000..637c97757aa10600da22b964c8f013b3c7ccf9ef
+--- /dev/null
++++ b/pom.xml
+@@ -0,0 +1,325 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <parent>
++		 <groupId>com.wyvern</groupId>
++		 <artifactId>wyvern-parent</artifactId>
++		 <version>1.18.1</version>
++        <relativePath>../pom.xml</relativePath>
++    </parent>
++
++    <artifactId>wyvern-server</artifactId>
++    <version>1.18.1</version>
++    <packaging>jar</packaging>
++
++    <name>Wyvern-Server</name>
++    <description>Wyvern is a project focusing on improving Minecraft software</description>
++
++    <properties>
++        <java.version>16</java.version>
++        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++    </properties>
++
++    <build>
++        <plugins>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-compiler-plugin</artifactId>
++                <version>3.8.1</version>
++                <configuration>
++                    <source>${java.version}</source>
++                    <target>${java.version}</target>
++                </configuration>
++            </plugin>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-shade-plugin</artifactId>
++                <version>3.2.4</version>
++                <executions>
++                    <execution>
++                        <phase>package</phase>
++                        <goals>
++                            <goal>shade</goal>
++                        </goals>
++                        <configuration>
++                            <createDependencyReducedPom>false</createDependencyReducedPom>
++                        </configuration>
++                    </execution>
++                </executions>
++            </plugin>
++        </plugins>
++        <resources>
++            <resource>
++                <directory>src/main/resources</directory>
++                <filtering>true</filtering>
++            </resource>
++        </resources>
++    </build>
++
++    <repositories>
++        <repository>
++            <id>minecraft-libraries</id>
++            <name>Minecraft Libraries</name>
++            <url>https://libraries.minecraft.net</url>
++        </repository>
++    </repositories>
++
++    <dependencies>
++
++        <!-- Mojang dependencies -->
++        <dependency>
++            <groupId>com.mojang</groupId>
++            <artifactId>datafixerupper</artifactId>
++            <version>4.0.26</version>
++            <exclusions>
++                <exclusion>
++                    <groupId>com.google.code.findbugs</groupId>
++                    <artifactId>jsr305</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.code.gson</groupId>
++                    <artifactId>gson</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.guava</groupId>
++                    <artifactId>guava</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>it.unimi.dsi</groupId>
++                    <artifactId>fastutil</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>org.apache.commons</groupId>
++                    <artifactId>commons-lang3</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>org.apache.logging.log4j</groupId>
++                    <artifactId>log4j-api</artifactId>
++                </exclusion>
++            </exclusions>
++        </dependency>
++
++        <dependency>
++            <groupId>com.mojang</groupId>
++            <artifactId>authlib</artifactId>
++            <version>3.2.38</version>
++            <exclusions>
++                <exclusion>
++                    <groupId>com.google.code.findbugs</groupId>
++                    <artifactId>jsr305</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.code.gson</groupId>
++                    <artifactId>gson</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.guava</groupId>
++                    <artifactId>guava</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>commons-io</groupId>
++                    <artifactId>commons-io</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>org.apache.commons</groupId>
++                    <artifactId>commons-lang3</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>org.apache.logging.log4j</groupId>
++                    <artifactId>log4j-core</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>org.apache.logging.log4j</groupId>
++                    <artifactId>log4j-api</artifactId>
++                </exclusion>
++            </exclusions>
++        </dependency>
++
++        <dependency>
++            <groupId>com.mojang</groupId>
++            <artifactId>brigadier</artifactId>
++            <version>1.0.500</version>
++            <exclusions>
++                <exclusion>
++                    <groupId>com.google.guava</groupId>
++                    <artifactId>guava</artifactId>
++                </exclusion>
++            </exclusions>
++        </dependency>
++
++        <!-- Commons -->
++        <dependency>
++            <groupId>commons-io</groupId>
++            <artifactId>commons-io</artifactId>
++            <version>2.11.0</version>
++        </dependency>
++
++        <!-- Apache -->
++        <dependency>
++            <groupId>org.apache.commons</groupId>
++            <artifactId>commons-lang3</artifactId>
++            <version>3.12.0</version>
++        </dependency>
++
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-core</artifactId>
++            <version>2.17.0</version>
++        </dependency>
++
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-api</artifactId>
++            <version>2.17.0</version>
++        </dependency>
++
++        <!-- Google -->
++        <dependency>
++            <groupId>com.google.code.gson</groupId>
++            <artifactId>gson</artifactId>
++            <version>2.8.9</version>
++        </dependency>
++
++        <dependency>
++            <groupId>com.google.guava</groupId>
++            <artifactId>guava</artifactId>
++            <version>31.0.1-jre</version>
++            <exclusions>
++                <exclusion>
++                    <groupId>com.google.guava</groupId>
++                    <artifactId>failureaccess</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.errorprone</groupId>
++                    <artifactId>error_prone_annotations</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>com.google.j2objc</groupId>
++                    <artifactId>j2objc-annotations</artifactId>
++                </exclusion>
++            </exclusions>
++        </dependency>
++
++        <!-- Other dependencies -->
++        <dependency>
++            <groupId>io.netty</groupId>
++            <artifactId>netty-all</artifactId>
++            <version>4.1.72.Final</version>
++            <exclusions>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-dns</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-haproxy</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-http2</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-http</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-memcache</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-mqtt</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-redis</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-smtp</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-socks</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-stomp</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-codec-xml</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-resolver</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-resolver-dns</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-resolver-dns-classes-macos</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-resolver-dns-native-macos</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-classes-kqueue</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-native-kqueue</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-native-unix-common</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-sctp</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-udt</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-tcnative-classes</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-handler-proxy</artifactId>
++                </exclusion>
++                <exclusion>
++                    <groupId>io.netty</groupId>
++                    <artifactId>netty-transport-rxtx</artifactId>
++                </exclusion>
++            </exclusions>
++        </dependency>
++
++        <dependency>
++            <groupId>it.unimi.dsi</groupId>
++            <artifactId>fastutil</artifactId>
++            <version>8.5.6</version>
++        </dependency>
++
++        <dependency>
++            <groupId>net.sf.jopt-simple</groupId>
++            <artifactId>jopt-simple</artifactId>
++            <version>6.0-alpha-3</version>
++        </dependency>
++
++        <dependency>
++            <groupId>com.wyvern</groupId>
++            <artifactId>minecraft-api</artifactId>
++            <version>1.18.1</version>
++        </dependency>
++    </dependencies>
++</project>
