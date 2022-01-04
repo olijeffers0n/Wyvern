@@ -48,33 +48,6 @@ case "$1" in
 		echo ""
         echo "  Pushed repository to github."
     ;;
-    "ch" | "clearh")
-		if [[ "$2" == "imSure" ]] && [[ "$3" == "yes" ]] && [[ "$4" == "itIsNecessary" ]]; then
-			delete "${NAME}-Server" "msg"
-			delete "${NAME}-API" "msg"
-			delete "$workdir" "msg"
-			delete ".git" "msg"
-			delete ".idea"
-			
-			echo ""
-			git init
-			echo ""
-			
-			git submodule add "https://github.com/HeartPattern/MC-Remapper" "work/MC-Remapper"
-			git submodule update --init --recursive
-			git remote add origin https://github.com/WyvernProject/Wyvern
-			
-			echo ""
-			git add -- . ':!*.patch'
-			echo ""
-			git commit -u -m "Let's get this project started! The Wyvern project!"
-				
-			echo ""
-			echo "  Cleared history."
-		else
-			echo "  Please confirm that you want to use this command"
-		fi
-    ;;
     *)
 		echo "We focus on enhancing vanilla Minecraft without sacrificing any behavior or features. You can think of this project as vanilla Minecraft, but with even more optimization and higher performance."
 		echo ""
