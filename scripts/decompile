@@ -22,7 +22,7 @@ jar="$forgeflower/Server-${VERSION}.jar"
 previousDecompiler="$forgeflower/forgeflower-$previousVersion.jar"
 decompiler="$forgeflower/forgeflower-$currentVersion.jar"
 
-downloadURL="https://maven.minecraftforge.net/net/minecraftforge/forgeflower/1.5.498.23/forgeflower-1.5.498.23.jar"
+downloadURL="https://maven.minecraftforge.net/net/minecraftforge/forgeflower/$currentVersion/forgeflower-$currentVersion.jar"
 
 (
 
