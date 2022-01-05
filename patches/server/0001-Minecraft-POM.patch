@@ -9,7 +9,7 @@ new file mode 100644
 index 0000000000000000000000000000000000000000..637c97757aa10600da22b964c8f013b3c7ccf9ef
 --- /dev/null
 +++ b/pom.xml
-@@ -0,0 +1,325 @@
+@@ -0,0 +1,331 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
