@@ -37,39 +37,10 @@ function updateDecompiler {
 	)
 }
 
-function updateRemapper {
-	(
-		cd "$remapper"
-		git fetch origin master && git reset --hard origin/master
-		cd "$basedir"
-		git add "$remapper"
-		
-		local remapperChangeLog=$(changelog work/MC-Remapper)
-		local updated=""
-		local logsuffix=""
-		
-		if [ -n "$remapperChangeLog" ]; then
-			logsuffix="\n\nMC-Remapper Changes:\n$remapperChangeLog"
-			if [ -z "$updated" ]; then 
-				updated="Remapper"
-			else 
-				updated="$updated/Paper"
-			fi
-		fi
-			
-		local disclaimer="Upstream has released an update that appear that we updated correctly"
-		local log="Updated Upstream ($updated)\n\n${disclaimer}${logsuffix}"
-
-		echo -e "$log" | git commit -F -
-	)
-}
-
 (
 	
 	if [[ "$1" == "decompiler" ]]; then
 		updateDecompiler "$2"
-	elif [[ "$1" == "remapper" ]]; then
-		updateRemapper
 	fi
 	
 ) || exit 1

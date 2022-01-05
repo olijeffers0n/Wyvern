@@ -162,6 +162,12 @@ index 0000000000000000000000000000000000000000..637c97757aa10600da22b964c8f013b3
 +            </exclusions>
 +        </dependency>
 +
++        <dependency>
++            <groupId>com.mojang</groupId>
++            <artifactId>javabridge</artifactId>
++            <version>1.2.24</version>
++        </dependency>
++
 +        <!-- Commons -->
 +        <dependency>
 +            <groupId>commons-io</groupId>

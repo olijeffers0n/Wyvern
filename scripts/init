@@ -7,9 +7,13 @@ VERSION="1.18.1"
 # Locations
 basedir="$(cd $scriptsBase/../ && pwd -P)"
 workdir="$basedir/work"
-forgeflower="$workdir/ForgeFlower"
-remapper="$workdir/MC-Remapper"
+quiltFlower="$workdir/QuiltFlower"
+remapper="$workdir/Remapper"
 patchDir="$basedir/patches"
+
+(
+  mkdir -p "$remapper"
+) || exit 1
 
 # Functions
 function change_line {

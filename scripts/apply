@@ -22,7 +22,7 @@ function applyPatches {
 	
 	if [[ "$target" ==  "${NAME}-Server" ]]; then
 		# Reset to minecraft source
-		cp -r "$forgeflower/minecraft/src" ./
+		cp -r "$quiltFlower/minecraft/src" ./
 		git add . > /dev/null 2>&1
 		git commit -m "Created $1" > /dev/null 2>&1
 	fi
