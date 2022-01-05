@@ -6,7 +6,7 @@ Subject: [PATCH] Minecraft POM
 
 diff --git a/pom.xml b/pom.xml
 new file mode 100644
-index 0000000000000000000000000000000000000000..637c97757aa10600da22b964c8f013b3c7ccf9ef
+index 0000000000000000000000000000000000000000..7668dfe4fdd2d3d6b89505483ddf50f7ee5bfa7c
 --- /dev/null
 +++ b/pom.xml
 @@ -0,0 +1,331 @@

@@ -1,0 +1,32 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: olijeffers0n <69084614+olijeffers0n@users.noreply.github.com>
+Date: Wed, 5 Jan 2022 16:47:07 +0000
+Subject: [PATCH] Rebrand Server
+
+
+diff --git a/src/main/java/net/minecraft/server/Eula.java b/src/main/java/net/minecraft/server/Eula.java
+index 6f6e1fabc1bee5837f1c3739f28e52965d3725ba..c3c9f3f851d54490e6f220f23f22237a344aa6d9 100644
+--- a/src/main/java/net/minecraft/server/Eula.java
++++ b/src/main/java/net/minecraft/server/Eula.java
+@@ -66,7 +66,7 @@ public class Eula {
+                     properties.setProperty("eula", "false");
+                     properties.store(
+                         outputstream,
+-                        "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula)."
++                        "By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).\nYou also agree that Wyverns are a force to be reckoned with."
+                     );
+                 } catch (Throwable throwable1) {
+                     if (outputstream != null) {
+diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
+index 04f6c16589b36f8ed5969e1f232b7438e2c28f0b..52d53f98646feb682b7268c0d8104564feccbd4e 100644
+--- a/src/main/java/net/minecraft/server/MinecraftServer.java
++++ b/src/main/java/net/minecraft/server/MinecraftServer.java
+@@ -968,7 +968,7 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
+ 
+     @DontObfuscate
+     public String getServerModName() {
+-        return "vanilla";
++        return "Wyvern";
+     }
+ 
+     public SystemReport fillSystemReport(SystemReport $$0) {
